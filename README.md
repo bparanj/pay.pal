@@ -1,0 +1,1 @@
+The railscast episode 141 Paypal Basics is updated to work with Rails 5.
