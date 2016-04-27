@@ -1,11 +1,12 @@
 module CartsHelper
-  def paypal_url(return_url, cart)
+  def paypal_url(return_url, cart, notify_url)
     values = {
       :business => 'bparanj-facilitator@rubyplus.com',
       :cmd => '_cart',
       :upload => 1,
       :return => return_url,
-      :invoice => cart.id
+      :invoice => cart.id,
+      :notify_url => notify_url
     }
     cart.line_items.each_with_index do |item, index|
       values.merge!({

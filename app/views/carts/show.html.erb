@@ -22,5 +22,5 @@
 
 <p>
   <%= link_to "Continue Shopping", products_url %> |
-  <%= link_to "Checkout", paypal_url(products_url, @cart) %>
+  <%= link_to "Checkout", paypal_url(products_url, @cart, payment_notifications_url) %>
 </p>
