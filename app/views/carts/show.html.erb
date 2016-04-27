@@ -21,6 +21,12 @@
 </table>
 
 <p>
-  <%= link_to "Continue Shopping", products_url %> |
-  <%= link_to "Checkout", paypal_url(products_url, @cart, payment_notifications_url) %>
+  <%= link_to "Continue Shopping", products_url %> 
+  
+  <form action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post'>
+    <%= hidden_field_tag :cmd, "_s-xclick" %>
+	<%= hidden_field_tag :encrypted, paypal_encrypted(products_url, @cart, payment_notifications_url) %>
+	<input type="submit" value="Checkout">
+  </form>
+  
 </p>
